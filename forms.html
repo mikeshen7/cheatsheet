@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/forms.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./CSSSelector.html">CSS Selector</a></li>
+        <li><a href="./CSSPosition.html">CSS Positioning</a></li>
+        <li><a href="./forms.html">Forms</a></li>
+        <br>
+        <li><a href="#textForm">Text Input Form</a></li>
+        <li><a href="#radioButton">Radio Button Form</a></li>
+        <li><a href="#checkbox">Checkbox Form</a></li>
+        <li><a href="#select">Select Form</a></li>
+        <li><a href="#multiSelect">Multi-Select Form</a></li>
+        <li><a href="#datalist">Datalist Form</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <Main>
+
+    <section class="form" id="textForm">
+      <section class="title">
+        <h2>Text Input Form: Code</h2>
+      </section>
+
+      <section class="title">
+        <h2>Notes</h2>
+      </section>
+
+      <section class="html">
+        <pre><code>
+&lt;form id="textInputForm"&gt;
+  &lt;fieldset&gt;&lt;/fieldset&gt;
+  &lt;legend&gt;Text input form&lt;/legend&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;label for="firstName"&gt;First Name:&lt;/label&gt;
+      &lt;input id="firstName" type="text" name="firstNameOutput"&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;label for="lastName"&gt;Last Name:&lt;/label&gt;
+      &lt;input id="lastName" type="text" name="lastNameOutput"&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </code></pre>
+      </section>
+
+      <section class="htmlNotes">
+        <br>
+        <p>form id="textInputForm - set DOM Window to this</p>
+        <p>Fieldset - display name for form</p>
+        <br><br>
+        <p>label for="firstName" must be same as input id</p>
+        <p>input name="firstNameOutput" - used for event output value</p>
+      </section>
+
+      <section class="js">
+        <pre><code>
+let textInputForm = document.getElementById('textInputForm');
+textInputForm.addEventListener('submit', handleTextInputFormSubmit);
+
+function handleTextInputFormSubmit(event){
+  event.preventDefault();
+  textInputFormFirst.textContent = event.target.elements.firstNameOutput.value;
+  textInputFormLast.textContent = event.target.elements.lastNameOutput.value;
+}
+
+let textInputFormFirst = document.getElementById('textInputFormFirst');
+let textInputFormLast = document.getElementById('textInputFormLast');
+          </code></pre>
+      </section>
+
+      <section class="jsNotes">
+        <br><br><br><br><br><br>
+        <p>target: event.target.elements.[input name].value</p>
+      </section>
+
+      <section class="example">
+        <form id="textInputForm">
+          <fieldset></fieldset>
+          <legend>Text input form</legend>
+          <ul>
+            <li>
+              <label for="firstName">First Name:</label>
+              <input id="firstName" type="text" name="firstNameOutput">
+            </li>
+            <li>
+              <label for="lastName">Last Name:</label>
+              <input id="lastName" type="text" name="lastNameOutput">
+            </li>
+          </ul>
+          <button>Submit</button>
+        </form>
+      </section>
+
+      <section class="output">
+        <p>Form Output:</p>
+        <p id="textInputFormFirst"></p>
+        <p id="textInputFormLast"></p>
+      </section>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="form" id="radioButton">
+      <section class="title">
+        <h2>Radio Button Form: Code</h2>
+      </section>
+
+      <section class="title">
+        <h2>Notes</h2>
+      </section>
+
+      <section class="html">
+        <pre><code>
+&lt;form id="radioButtonForm"&gt;
+  &lt;fieldset&gt;&lt;/fieldset&gt;
+  &lt;legend&gt;Radio Button form&lt;/legend&gt;
+
+  &lt;ul&gt;
+    &lt;div&gt;
+      &lt;label for="option1"&gt;Option 1 label&lt;/label&gt;
+      &lt;input id="option1" name="options" type="radio" value="Option 1"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="option2"&gt;Option 2 label&lt;/label&gt;
+      &lt;input id="option2" name="options" type="radio" value="Option 2"&gt;
+    &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/ul&gt;
+
+  &lt;button=&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </code></pre>
+      </section>
+
+      <section class="htmlNotes">
+        <br><br>
+        <p>UL / DIV makes options display vertically. No other function</p>
+        <br><br><br>
+        <p>label for="option1" must be same as input id</p>
+        <br><br>
+        <p>input name="options" must be the same for all radio buttons to link them together</p>
+        <br>
+        <p>input name="options" is used by event output value</p>
+        <br>
+        <p>input value is the string that is returned</p>
+
+      </section>
+
+      <section class="js">
+        <pre><code>
+let radioButtonForm = document.getElementById('radioButtonForm');
+radioButtonForm.addEventListener('submit', handleRadioButtonFormSubmit);
+
+function handleRadioButtonFormSubmit(event){
+  event.preventDefault();
+  radioButtonFormOutput.textContent = event.target.elements.options.value;
+}          
+          </code></pre>
+      </section>
+
+      <section class="jsNotes">
+        <br><br><br><br><br><br>
+        <p>target: event.target.elements.[input name].value</p>
+      </section>
+
+      <section class="example">
+        <form id="radioButtonForm">
+          <fieldset></fieldset>
+          <legend>Radio Button form</legend>
+
+          <ul>
+            <div>
+              <label for="option1">Option 1 label</label>
+              <input id="option1" name="options" type="radio" value="Option 1">
+            </div>
+            <div>
+              <label for="option2">Option 2 label</label>
+              <input id="option2" name="options" type="radio" value="Option 2">
+            </div>
+          </ul>
+
+          <button>Submit</button>
+        </form>
+      </section>
+
+      <section class="output">
+        <p>Form Output:</p>
+        <p id="radioButtonFormOutput"></p>
+      </section>
+    </section>
+
+
+
+
+
+    <section class="form" id="checkbox">
+      <section class="title">
+        <h2>Checkbox Form: Code</h2>
+      </section>
+
+      <section class="title">
+        <h2>Notes</h2>
+      </section>
+
+      <section class="html">
+        <pre><code>
+&lt;form id="checkboxForm"&gt;
+  &lt;fieldset&gt;&lt;/fieldset&gt;
+  &lt;legend&gt;Checkbox form&lt;/legend&gt;
+
+  &lt;ul&gt;
+    &lt;div&gt;
+      &lt;label for="option1"&gt;Option 1 label&lt;/label&gt;
+      &lt;input id="option1" name="name1" type="checkbox" value="Option 1"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="option2"&gt;Option 2 label&lt;/label&gt;
+      &lt;input id="option2" name="name2" type="checkbox" value="Option 2"&gt;
+    &lt;/div&gt;
+  &lt;/ul&gt;
+
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </code></pre>
+      </section>
+
+      <section class="htmlNotes">
+        <br><br>
+        <p>label for="option1" must be same as input id</p>
+        <br><br>
+        <p>input name="name1" must be unique</p>
+        <br>
+        <p>input name="name1" is used by event output value</p>
+        <br>
+
+      </section>
+
+      <section class="js">
+        <pre><code>
+let checkboxForm = document.getElementById('checkboxForm');
+checkboxForm.addEventListener('submit', handleCheckboxFormSubmit);
+
+function handleCheckboxFormSubmit(event){
+  event.preventDefault();
+  checkboxFormOutput1.textContent = 'Option 1 checked: ' + event.target.elements.name1.checked;
+  checkboxFormOutput2.textContent = 'Option 2 checked: ' + event.target.elements.name2.checked;
+}
+
+let checkboxFormOutput1 = document.getElementById('checkboxFormOutput1');
+let checkboxFormOutput2 = document.getElementById('checkboxFormOutput2');      
+          </code></pre>
+      </section>
+
+      <section class="jsNotes">
+        <br><br><br><br><br><br>
+        <p>target: event.target.elements.[input name].checked</p>
+        <p>returns true/false for each checkbox</p>
+      </section>
+
+      <section class="example">
+        <form id="checkboxForm">
+          <fieldset></fieldset>
+          <legend>Checkbox form</legend>
+
+          <ul>
+            <div>
+              <label for="option1">Option 1 label</label>
+              <input id="option1" name="name1" type="checkbox" value="Option 1">
+            </div>
+            <div>
+              <label for="option2">Option 2 label</label>
+              <input id="option2" name="name2" type="checkbox" value="Option 2">
+            </div>
+          </ul>
+
+          <button>Submit</button>
+        </form>
+      </section>
+
+      <section class="output">
+        <p>Form Output:</p>
+        <p id="checkboxFormOutput1"></p>
+        <p id="checkboxFormOutput2"></p>
+      </section>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="form" id="select">
+      <section class="title">
+        <h2>Select Form: Code</h2>
+      </section>
+
+      <section class="title">
+        <h2>Notes</h2>
+      </section>
+
+      <section class="html">
+        <pre><code>
+&lt;form id="selectForm"&gt;
+  &lt;fieldset&gt;&lt;/fieldset&gt;
+  &lt;legend&gt;Select form&lt;/legend&gt;
+
+  &lt;label for="options"&gt;Options label&lt;/label&gt;
+  &lt;select id="options" name="optionValue" size="2"&gt;
+    &lt;option value="option1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+    &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+    &lt;option value="option4" selected&gt;Option 4&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </code></pre>
+      </section>
+
+      <section class="htmlNotes">
+        <br><br><br><br>
+        <p>label for="option" must be same as select id</p>
+        <br>
+        <p>select name="optionValue" is used by event output value</p>
+        <br>
+        <p>option selected makes it the default selection</p>
+        <br>
+        <p>select size="2" sets the option window to 2 visible values</p>
+
+      </section>
+
+      <section class="js">
+        <pre><code>
+let selectForm = document.getElementById('selectForm');
+selectForm.addEventListener('submit', handleSelectFormSubmit);
+
+function handleSelectFormSubmit(event){
+  event.preventDefault();
+  selectOutput.textContent = event.target.elements.optionValue.value;
+  console.dir(event.target.elements.optionValue);
+}
+
+let selectOutput = document.getElementById('selectOutput');           
+          </code></pre>
+      </section>
+
+      <section class="jsNotes">
+        <br><br><br><br><br><br>
+        <p>target: event.target.elements.[select name].value</p>
+      </section>
+
+      <section class="example">
+        <form id="selectForm">
+          <fieldset></fieldset>
+          <legend>Select form</legend>
+
+          <label for="options">Options label</label>
+          <select id="options" name="optionValue" size="2">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4" selected>Option 4</option>
+          </select>
+          <button>Submit</button>
+        </form>
+      </section>
+
+      <section class="output">
+        <p>Form Output:</p>
+        <p id="selectOutput"></p>
+      </section>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="form" id="multiSelect">
+      <section class="title">
+        <h2>Multi-select Form: Code</h2>
+      </section>
+
+      <section class="title">
+        <h2>Notes</h2>
+      </section>
+
+      <section class="html">
+        <pre><code>
+&lt;form id="multiSelectForm"&gt;
+  &lt;fieldset&gt;&lt;/fieldset&gt;
+  &lt;legend&gt;Select form&lt;/legend&gt;
+
+  &lt;label for="multiSelectoptions"&gt;Options label&lt;/label&gt;
+  &lt;select id="multiSelectoptions" name="multiSelectName" multiple&gt;
+    &lt;option value="option1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+    &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+    &lt;option value="option4"&gt;Option 4&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </code></pre>
+      </section>
+
+      <section class="htmlNotes">
+        <br>
+        <p>Same as normal select, with a few differences</p>
+        <br><br><br><br>
+        <p>select multiple allows for multiple choices</p>
+        <br>
+        <p></p>
+        <br>
+
+
+      </section>
+
+      <section class="js">
+        <pre><code>
+let multiSelectForm = document.getElementById('multiSelectForm');
+multiSelectForm.addEventListener('submit', handleMultiSelectFormSubmit);
+
+function handleMultiSelectFormSubmit(event){
+  event.preventDefault();
+  console.dir(event.target.elements);
+  multiSelectOutput0.textContent = event.target.elements.multiSelectName[0].selected;
+  multiSelectOutput1.textContent = event.target.elements.multiSelectName[1].selected;
+  multiSelectOutput2.textContent = event.target.elements.multiSelectName[2].selected;
+  multiSelectOutput3.textContent = event.target.elements.multiSelectName[3].selected;
+}
+
+let multiSelectOutput0 = document.getElementById('multiSelectOutput0');
+let multiSelectOutput1 = document.getElementById('multiSelectOutput1');
+let multiSelectOutput2 = document.getElementById('multiSelectOutput2');
+let multiSelectOutput3 = document.getElementById('multiSelectOutput3');         
+          </code></pre>
+      </section>
+
+      <section class="jsNotes">
+        <br><br><br><br><br><br><br>
+        <p>Target: event.target.elements.[select name][index].selected</p>
+        <p>Uses index of 0-3 for the 4 options</p>
+        <p>Returns true/false for all 4 options</p>
+      </section>
+
+      <section class="example">
+        <form id="multiSelectForm">
+          <fieldset></fieldset>
+          <legend>Select form</legend>
+
+          <label for="multiSelectoptions">Options label</label>
+          <select id="multiSelectoptions" name="multiSelectName" multiple>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select>
+          <button>Submit</button>
+        </form>
+      </section>
+
+      <section class="output">
+        <p>Form Output:</p>
+        <p id="multiSelectOutput0"></p>
+        <p id="multiSelectOutput1"></p>
+        <p id="multiSelectOutput2"></p>
+        <p id="multiSelectOutput3"></p>
+      </section>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="form" id="datalist">
+      <section class="title">
+        <h2>Datalist Form: Code</h2>
+      </section>
+
+      <section class="title">
+        <h2>Notes</h2>
+      </section>
+
+      <section class="html">
+        <pre><code>
+&lt;form id="datalistForm"&gt;
+  &lt;fieldset&gt;&lt;/fieldset&gt;
+  &lt;legend&gt;Datalist form&lt;/legend&gt;
+
+  &lt;label for="datalistInput"&gt;Datalist Options&lt;/label&gt;
+  &lt;input id="datalistInput" list="datalistOptions" name="dataListName"&gt;
+
+  &lt;datalist id="datalistOptions"&gt;
+    &lt;option value="option1"&gt;&lt;/option&gt;
+    &lt;option value="option2"&gt;&lt;/option&gt;
+    &lt;option value="option3"&gt;&lt;/option&gt;
+    &lt;option value="option4"&gt;&lt;/option&gt;
+  &lt;/datalist&gt;
+
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </code></pre>
+      </section>
+
+      <section class="htmlNotes">
+        <br><br><br><br>
+        <p>label for="datalistInput" must be same as input id</p>
+        <br>
+        <p>select name="dataListName" is used by event output value</p>
+        <br>
+        <br>
+        <p>datalist id="datalistOptions must be same as input list</p>
+        <br>
+        <p>Has other display options: date/time, range (with graphical bar), color </p>
+
+
+
+      </section>
+
+      <section class="js">
+        <pre><code>
+let datalistForm = document.getElementById('datalistForm');
+datalistForm.addEventListener('submit', handleDatalistFormSubmit);
+
+function handleDatalistFormSubmit(event){
+  event.preventDefault();
+  console.dir(event.target.elements);
+  datalistOutput.textContent = event.target.elements.dataListName.value;
+}
+
+let datalistOutput = document.getElementById('datalistOutput');      
+          </code></pre>
+      </section>
+
+      <section class="jsNotes">
+        <br><br><br><br><br><br><br>
+        <p>Target: event.target.elements.[input name].value</p>
+      </section>
+
+      <section class="example">
+        <form id="datalistForm">
+          <fieldset></fieldset>
+          <legend>Datalist form</legend>
+
+          <label for="datalistInput">Datalist Options</label>
+          <input id="datalistInput" list="datalistOptions" name="dataListName">
+
+          <datalist id="datalistOptions">
+            <option value="option1"></option>
+            <option value="option2"></option>
+            <option value="option3"></option>
+            <option value="option4"></option>
+          </datalist>
+
+          <button>Submit</button>
+        </form>
+      </section>
+
+      <section class="output">
+        <p>Form Output:</p>
+        <p id="datalistOutput"></p>
+      </section>
+    </section>
+
+
+
+
+
+
+  </Main>
+
+  <footer>
+  </footer>
+
+  <script src="./js/forms.js"></script>
+
+</body>
+
+</html>

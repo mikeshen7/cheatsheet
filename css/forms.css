@@ -1,0 +1,58 @@
+nav {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+main {
+  width: 80%;
+  margin-right: 3px;
+  margin-left: auto;
+}
+
+.form {
+  border: 1px solid black;
+  width: 100%;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    'title title'
+    'html htmlNotes'
+    'js jsNotes'
+    'example output';
+}
+
+.title {
+  border: 1px solid black;
+  font-weight: 700;
+}
+
+.html {
+  border: 1px solid black;
+}
+
+.htmlNotes {
+  border: 1px solid black;
+}
+
+.js {
+  border: 1px solid black;
+}
+
+.jsNotes {
+  border: 1px solid black;
+}
+
+.example {
+  border: 1px solid black;
+}
+
+.output {
+  border: 1px solid black;
+}
+
+#radioButtonForm {
+  display:block;
+}

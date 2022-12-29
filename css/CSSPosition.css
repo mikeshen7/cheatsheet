@@ -1,0 +1,96 @@
+header {
+  height: 100px;
+}
+
+/* To center one item
+1. CONTAINER: full-width, flex
+2. ITEM: not full-width, margin:auto */
+#centerOne {
+  border: 1px solid black;
+  width: 100%;
+  display:flex;
+}
+
+#centerOne > div {
+  border: 1px solid black;
+  width: max-content;
+  margin:auto;
+}
+
+/* To center two items inside a section, CSS on the container
+1. CONTAINER: Flex, justify content */
+#centerTwo {
+  border: 1px solid black;
+  display:flex;
+  justify-content: space-evenly
+}
+
+#centerTwo div {
+  border: 1px solid black;
+  width: 200px;
+  height: 70px;
+}
+
+/* To put one item on the right, CSS on container */
+header {
+  display: flex;
+  justify-content: right;
+}
+
+
+
+/* Smaller main section */
+main {
+  border: 1px solid black;
+  width: 80%;
+  margin:auto;
+}
+
+
+/* To resize image, set width or height on image, not the container */
+#resizeImg {
+  border: 1px solid black;
+  height: 100px;
+  float:left;
+}
+
+
+p {
+  border: 1px solid black;
+  height: 100px;
+  width:100%;
+}
+
+
+/* To center text horizontally*/
+#centerTextHorizontally {
+  border: 1px solid black;
+  text-align: center;
+  justify-content: center;
+}
+
+/* To center text horizontally - option 2*/
+#centerTextHorizontally2 {
+  border: 1px solid black;
+  display:flex;
+  justify-content: center;
+}
+
+/* To center text vertially*/
+#centerTextVertically {
+  border: 1px solid black;
+  display:flex;
+  align-items: center;
+}
+
+/* To position NAV always on the left */
+nav {
+  position: fixed;
+  left: 0px;
+  top:0px;
+}
+
+#scrollable {
+  height:100px;
+  overflow:auto;
+}

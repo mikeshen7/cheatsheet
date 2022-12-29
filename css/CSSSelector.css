@@ -1,0 +1,165 @@
+/* Universal Selector. Selects all elements inside of main*/
+nav {
+  width: 15%;
+  position: fixed;
+}
+
+main {
+  width: 85%;
+  margin-left: auto;
+  margin-right: 3px;
+  padding-top: 40px;
+}
+
+.selector {
+  border: 1px solid black;
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.selector h2 {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.selectorExample {
+  width: 100%;
+  display: flex;
+}
+
+.selectorDiv {
+  border-left: 1px solid black;
+  width: 33%;
+  justify-content: space-between;
+  min-height: 50px;
+  padding: 5px;
+}
+
+.headerRow {
+  border: 1px solid black;
+  display: flex;
+  width: 85%;
+  height: 30px;
+  font-weight: 700;
+  position: fixed;
+
+  right: 1px;
+  background-color: lightgreen;
+}
+
+.headerRow h2 {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  ;
+}
+
+.headerExample {
+  width: 100%;
+  display: flex;
+}
+
+.headerRow div {
+  border-left: 1px solid black;
+  width: 33%;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+header p {
+  position: fixed;
+  left:0px;
+  bottom:0px;
+}
+
+
+
+
+#typeSelector div {
+  color: red;
+}
+
+#IDSelector #idName {
+  color: red;
+}
+
+#classSelector .className {
+  color: red;
+}
+
+#descendantSelector div p {
+  color: red;
+}
+
+#childSelector div>p {
+  color: red;
+}
+
+#elementClassSelector p.elementClassSelector {
+  color: red;
+}
+
+#orSelector #or1,
+#or2 {
+  color: red;
+}
+
+#adjacentSiblingSelector div+p {
+  color: red;
+}
+
+#generalSiblingSelector div~p {
+  color: red;
+}
+
+#firstChildSelector div :first-child {
+  color: red;
+}
+
+#firstChildSelector2 div h3:first-child {
+  color: red;
+}
+
+#lastChildSelector div :last-child {
+  color: red;
+}
+
+#nthChildSelector div :nth-child(3) {
+  color: red;
+}
+
+#nthLastChildSelector div :nth-last-child(3) {
+  color: red;
+}
+
+#firstOfTypeSelector div p:first-of-type {
+  color: red;
+}
+
+#nthOfTypeSelector div p:nth-of-type(2) {
+  color: red;
+}
+
+#onlyOfTypeSelector div p:only-of-type {
+  color: red;
+}
+
+#lastOfTypeSelector div p:last-of-type {
+  color: red;
+}
+
+#emptySelector p:empty {
+  height: 15px;
+  border: 1px solid red;
+}
+
+#negationSelector div :not(p) {
+  color: red;
+}
+
+#attributeSelector p[type] {
+  color: red;
+}

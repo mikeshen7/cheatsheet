@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/CSSSelector.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./CSSSelector.html">CSS Selector</a></li>
+        <li><a href="./CSSPosition.html">CSS Positioning</a></li>
+        <li><a href="./forms.html">Forms</a></li>
+        <br>
+        <li><a href="#typeSelector">Type Selector</a></li>
+        <li><a href="#IDSelector">ID Selector</a></li>
+        <li><a href="#classSelector">Class Selector</a></li>
+        <li><a href="#elementClassSelector">Element-Class Selector</a></li>
+        <li><a href="#orSelector">OR Selector</a></li>
+        <br>
+        <li><a href="#descendantSelector">Descendant Selector</a></li>
+        <li><a href="#childSelector">Child Selector</a></li>
+        <li><a href="#adjacentSiblingSelector">Adjacent Sibling Selector</a></li>
+        <li><a href="#generalSiblingSelector">General Sibling Selector</a></li>
+        <br>
+        <li><a href="#firstChildSelector">1st Child Selector</a></li>
+        <li><a href="#firstChildSelector2">1st Child/Element Selector</a></li>
+        <li><a href="#lastChildSelector">Last Child Selector</a></li>
+        <li><a href="#nthChildSelector">nth Child Selector</a></li>
+        <li><a href="#nthLastChildSelector">nth Last Child Selector</a></li>
+        <br>
+        <li><a href="#firstOfTypeSelector">First of Type Selector</a></li>
+        <li><a href="#nthOfTypeSelector">nth of Type Selector</a></li>
+        <li><a href="#onlyOfTypeSelector">Only of Type Selector</a></li>
+        <li><a href="#lastOfTypeSelector">Last of Type Selector</a></li>
+        <li><a href="#emptySelector">Empty Selector</a></li>
+        <li><a href="#negationSelector">Negation Selector</a></li>
+        <br>
+        <li><a href="#attributeSelector">Attribute Selector</a></li>
+      </ul>
+
+      <p>&copy; Copyright 2022 <br> Michael Shen</p>
+    </nav>
+
+    <section class="headerRow">
+      <h2>Selector Name</h2>
+      <section class="headerExample">
+        <div>Description</div>
+        <div>HTML</div>
+        <div>Example</div>
+      </section>
+    </section>
+
+  </header>
+
+  <Main>
+
+
+    <section class="selector" id="typeSelector">
+      <h2>Type Selector</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Select all div's <br><br>
+          div { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div&gt; TARGET &lt;/div&gt;
+        </section>
+        <div class="selectorDiv">TARGET</div>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="IDSelector">
+      <h2>ID Selector <br><br> #id</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Select element with a specific ID. Use to target 1 element <br><br>
+          #idName { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div id="idName"&gt; TARGET &lt;/div&gt;
+        </section>
+        <div class="selectorDiv" id="idName">TARGET</div>
+      </section>
+    </section>
+
+
+    <section class="selector" id="classSelector">
+      <h2>Class Selector <br><br> .class</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Select elements with the same class. Use to target multiple elements <br><br>
+          .className { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div class="className"&gt; TARGET &lt;/div&gt;<br>
+          &lt;p class="className"&gt; TARGET &lt;/p&gt;<br>
+          &lt;p&gt; Not the target &lt;/p&gt;<br>
+        </section>
+        <section class="selectorDiv">
+          <div class="className">TARGET</div>
+          <p class="className">TARGET</p>
+          <p>Not the same class</p>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="elementClassSelector">
+      <h2>Element-Class Selector <br><br> element.class</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects elements that have the same element AND class<br><br>
+          p.elementClassSelector { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div class="typeClassSelector"&gt; Correct class, but not a p &lt;/div&gt;<br>
+          &lt;p class="typeClassSelector"&gt; Correct class and element &lt;/div&gt;<br>
+          &lt;p class="typeClassSelector"&gt; Correct class and element &lt;/div&gt;<br>
+          &lt;p&gt; Correct element, but not the correct class &lt;/div&gt;<br>
+        </section>
+        <section class="selectorDiv">
+          <div class="elementClassSelector">Correct class, but not a p </div>
+          <p class="elementClassSelector">Correct class and element</p>
+          <p class="elementClassSelector">Correct class and element</p>
+          <p>Correct element, but not the correct class</p>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="orSelector">
+      <h2>OR Selector <br><br> A,B</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects elements with id of 'or1' or 'or2'<br><br>
+          #or1,#or2 { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;p&gt; P or1 &lt;/p&gt;<br>
+          &lt;div&gt; div or2 &lt;/div&gt;<br>
+          &lt;p&gt; P or3 &lt;/p&gt;<br>
+        </section>
+        <section class="selectorDiv">
+          <p id="or1">P or1</p>
+          <div id="or2">div or2</div>
+          <p id="or3">P or3</p>
+        </section>
+      </section>
+    </section>
+
+
+
+
+
+    <section class="selector" id="descendantSelector">
+      <h2>Descendant Selector <br><br> A B</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Get all p's that are descenant of div. Looks at all generations <br><br>
+          div p { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div&gt; DIV <br>&nbsp;&nbsp;
+          &lt;p&gt; P descendent of DIV &lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P descendent of DIV &lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;section&gt; section &lt;/section&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &lt;p&gt; P descendent of DIV &lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;section&gt;<br>
+          &lt;/div&gt;<br>
+          &lt;p&gt; Not a descendent of div &lt;/p&gt;<br>
+        </section>
+        <section class="selectorDiv">
+          <div>DIV
+            <p>&nbsp;&nbsp;P descendent of DIV </p>
+            <p>&nbsp;&nbsp;P descendent of DIV </p>
+            <section>&nbsp;&nbsp;SECTION
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;P descendent of DIV </p>
+            </section>
+          </div><br><br>
+          <p>Not a descendent of div</p>
+        </section>
+      </section>
+    </section>
+
+
+
+
+    <section class="selector" id="childSelector">
+      <h2>Child Selector <br><br> A > B</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Get all p's that are a direct child of div. Looks at 1 generation <br><br>
+          div > p { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div&gt; DIV <br>&nbsp;&nbsp;
+          &lt;p&gt; P child of DIV &lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P child of DIV &lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;section&gt; section &lt;/section&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &lt;p&gt; P not a child of div&lt;/p&gt;<br>
+          &lt;/div&gt;<br>
+          &lt;p&gt; P not a child of div &lt;/p&gt;<br>
+        </section>
+        <section class="selectorDiv">
+          <div>DIV
+            <p>&nbsp;&nbsp;P child of DIV </p>
+            <p>&nbsp;&nbsp;P child of DIV </p>
+            <section>&nbsp;&nbsp;section
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;P not a child of div</p>
+            </section>
+          </div><br>
+          <p>P not a child of div</p>
+        </section>
+      </section>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="selector" id="adjacentSiblingSelector">
+      <h2>Adjacent Sibling Selector <br><br> A+B</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects the first 'p' that follows a 'div' <br><br>
+          div+p { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; P not a sibling to div&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2&lt;/div&gt;<br>&nbsp;&nbsp;
+
+          &lt;p&gt; P first sibling to DIV 2&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P not first sibling to DIV 2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>
+          &lt;p&gt; P first sibling to DIV 1&lt;/p&gt;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;P not a sibling to DIV</p>
+            <div>&nbsp;&nbsp;DIV 2</div>
+            <p>&nbsp;&nbsp;P first sibling to DIV 2</p>
+            <p>&nbsp;&nbsp;P not first sibling to DIV 2</p><br>
+          </div>
+          <p>P first sibling to DIV 1</p>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="generalSiblingSelector">
+      <h2>General Sibling Selector <br><br> A~B</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects all 'p' that follows a 'div' <br><br>
+          div~p { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; P not a sibling to div&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2&lt;/div&gt;<br>&nbsp;&nbsp;
+
+          &lt;p&gt; P sibling to DIV 2&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P sibling to DIV 2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>
+          &lt;p&gt; P sibling to DIV 1&lt;/p&gt;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;P not a sibling to DIV</p>
+            <div>&nbsp;&nbsp;DIV 2</div>
+            <p>&nbsp;&nbsp;P sibling to DIV 2</p>
+            <h3>&nbsp;&nbsp;h3</h3>
+            <p>&nbsp;&nbsp;P sibling to DIV 2</p><br>
+          </div>
+          <p>P sibling to DIV 1</p>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="firstChildSelector">
+      <h2>First Child Pseudo-Selector <br><br> :first-child</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects first child element inside a 'div' <br><br>
+          div :first-child { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; P first child to DIV1&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 second child to DIV1&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P third child to DIV1&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 first child to DIV2&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P second child to DIV2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;P first child to DIV1</p>
+            <h3>&nbsp;&nbsp;h3 second child to DIV1</h3>
+            <p>&nbsp;&nbsp;P third child to DIV1</p><br>
+          </div>
+          <div>DIV 2
+            <h3>&nbsp;&nbsp;h3 first child to DIV2</h3>
+            <p>&nbsp;&nbsp;P second child to DIV2</p><br>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="firstChildSelector2">
+      <h2>First Child Pseudo-Selector element and first-child <br><br> element:first-child</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects h3 first child elements inside a 'div' <br><br>
+          div h3:first-child { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; P first child to DIV1&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 second child to DIV1&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P third child to DIV1&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 first child to DIV2&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P second child to DIV2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;P first child to DIV1</p>
+            <h3>&nbsp;&nbsp;h3 second child to DIV1</h3>
+            <p>&nbsp;&nbsp;P third child to DIV1</p><br>
+          </div>
+          <div>DIV 2
+            <h3>&nbsp;&nbsp;h3 first child to DIV2</h3>
+            <p>&nbsp;&nbsp;P second child to DIV2</p><br>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="lastChildSelector">
+      <h2>Last Child Pseudo-Selector <br><br> :last-child</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects last child element inside a 'div' <br><br>
+          div :last-child { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; P first child to DIV1&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 second child to DIV1&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P third child to DIV1&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 first child to DIV2&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P second child to DIV2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;P first child to DIV1</p>
+            <h3>&nbsp;&nbsp;h3 second child to DIV1</h3>
+            <p>&nbsp;&nbsp;P third child to DIV1</p>
+          </div><br>
+          <div>DIV 2
+            <h3>&nbsp;&nbsp;h3 first child to DIV2</h3>
+            <p>&nbsp;&nbsp;P second child to DIV2</p>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="nthChildSelector">
+      <h2>nth Child Pseudo-Selector <br><br> :nth-child(A)</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects the third child element inside a 'div' <br><br>
+          div :nth-child(3) { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; P first child to DIV1&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 second child to DIV1&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P third child to DIV1&lt;/p&gt;<br>
+          &lt;p&gt; P fourth child to DIV1&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 first child to DIV2&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P second child to DIV2&lt;/p&gt;<br>
+          &lt;p&gt; P third child to DIV2&lt;/p&gt;<br>
+          &lt;p&gt; P fourth child to DIV2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;P first child to DIV1</p>
+            <h3>&nbsp;&nbsp;h3 second child to DIV1</h3>
+            <p>&nbsp;&nbsp;P third child to DIV1</p>
+            <p>&nbsp;&nbsp;P fourth child to DIV1</p>
+          </div><br>
+          <div>DIV 2
+            <h3>&nbsp;&nbsp;h3 first child to DIV2</h3>
+            <p>&nbsp;&nbsp;P second child to DIV2</p>
+            <p>&nbsp;&nbsp;P third child to DIV2</p>
+            <p>&nbsp;&nbsp;P fourth child to DIV2</p>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="nthLastChildSelector">
+      <h2>nth Last Child Pseudo-Selector <br><br> :nth-last-child(A)</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects the third child element inside a 'div' counting from end<br><br>
+          div :nth-last child(3) { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; P fourth last child to DIV1&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 third last child to DIV1&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P second last child to DIV1&lt;/p&gt;<br>
+          &lt;p&gt; P first last child to DIV1&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 fourth last child to DIV2&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; P third last child to DIV2&lt;/p&gt;<br>
+          &lt;p&gt; P second last child to DIV2&lt;/p&gt;<br>
+          &lt;p&gt; P first last child to DIV2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;P fourth last child to DIV1</p>
+            <h3>&nbsp;&nbsp;h3 third last child to DIV1</h3>
+            <p>&nbsp;&nbsp;P second last child to DIV1</p>
+            <p>&nbsp;&nbsp;P first last child to DIV1</p>
+          </div><br>
+          <div>DIV 2
+            <h3>&nbsp;&nbsp;h3 fourth last child to DIV2</h3>
+            <p>&nbsp;&nbsp;P third last child to DIV2</p>
+            <p>&nbsp;&nbsp;P second last child to DIV2</p>
+            <p>&nbsp;&nbsp;P first last child to DIV2</p>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="firstOfTypeSelector">
+      <h2>First of Type Selector <br><br> :first-of-type</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects the first p inside of a div<br><br>
+          div p:first-of-type { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; First P inside DIV1&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 &lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; Second P inside DIV1&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; First P inside DIV2&lt;/p&gt;<br>
+          &lt;p&gt; Second P inside DIV2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;First P inside DIV1</p>
+            <h3>&nbsp;&nbsp;h3</h3>
+            <p>&nbsp;&nbsp;Second P inside DIV1</p>
+          </div><br>
+          <div>DIV 2
+            <h3>&nbsp;&nbsp;h3</h3>
+            <p>&nbsp;&nbsp;First P inside DIV2</p>
+            <p>&nbsp;&nbsp;Second P inside DIV2</p>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+
+    <section class="selector" id="nthOfTypeSelector">
+      <h2>nth of Type Selector <br><br> :nth-of-type(A)</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects the 2nd p inside of a div<br>
+          Can also select odd or even :nth-of-type(odd)<br>
+          Can also input in a formula :nth-of-type(6n+2)<br><br>
+          div p:nth-of-type(2) { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; First P inside DIV1&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 &lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; Second P inside DIV1&lt;/p&gt;<br>
+          &lt;p&gt; Third P inside DIV1&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; First P inside DIV2&lt;/p&gt;<br>
+          &lt;p&gt; Second P inside DIV2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;First P inside DIV1</p>
+            <h3>&nbsp;&nbsp;h3</h3>
+            <p>&nbsp;&nbsp;Second P inside DIV1</p>
+            <p>&nbsp;&nbsp;Third P inside DIV1</p>
+          </div><br>
+          <div>DIV 2
+            <h3>&nbsp;&nbsp;h3</h3>
+            <p>&nbsp;&nbsp;First P inside DIV2</p>
+            <p>&nbsp;&nbsp;Second P inside DIV2</p>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="onlyOfTypeSelector">
+      <h2>Only of Type Selector <br><br> :only-of-type</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects only unique elements within their parent element<br>
+          Selects the p inside div only if it is the only p <br><br>
+          div p:only-of-type { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; First P inside DIV1&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 &lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; Second P inside DIV1&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; Only P inside DIV2&lt;/p&gt;<br>
+          &lt;h4&gt; h4&lt;/h4&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;First P inside DIV1</p>
+            <h3>&nbsp;&nbsp;h3</h3>
+            <p>&nbsp;&nbsp;Second P inside DIV1</p>
+          </div><br>
+          <div>DIV 2
+            <h3>&nbsp;&nbsp;h3</h3>
+            <p>&nbsp;&nbsp;Only P inside DIV2</p>
+            <h4>&nbsp;&nbsp;h4</h4>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="lastOfTypeSelector">
+      <h2>Last of Type Selector <br><br> :last-of-type</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects the last p inside of a div<br><br>
+          div p:last-of-type { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt; First P inside DIV1&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3 &lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; Second P inside DIV1&lt;/p&gt;<br>
+          &lt;p&gt; Third P inside DIV1&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+          &lt;div &gt; DIV 2<br>&nbsp;&nbsp;
+          &lt;h3&gt; h3&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; First P inside DIV2&lt;/p&gt;<br>
+          &lt;p&gt; Second P inside DIV2&lt;/p&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;First P inside DIV1</p>
+            <h3>&nbsp;&nbsp;h3</h3>
+            <p>&nbsp;&nbsp;Second P inside DIV1</p>
+            <p>&nbsp;&nbsp;Third P inside DIV1</p>
+          </div><br>
+          <div>DIV 2
+            <h3>&nbsp;&nbsp;h3</h3>
+            <p>&nbsp;&nbsp;First P inside DIV2</p>
+            <p>&nbsp;&nbsp;Second P inside DIV2</p>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+
+    <section class="selector" id="emptySelector">
+      <h2>Empty Selector <br><br> :empty</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects elements that don't have children<br>
+          Selects all empty p elements <br><br>
+          div p:empty { <br>&nbsp;&nbsp;
+          height:15px;<br>&nbsp;&nbsp;
+          border: 1px solid red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt;&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;p&gt; Line above is a P with nothing inside&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;section&gt; Section&lt;/section&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p></p>
+            <p>Line above is a P with nothing inside</p>
+            <section>Section</section>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+
+    <section class="selector" id="negationSelector">
+      <h2>Negation Selector <br><br> :not(X)</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects elements that are NOT p elements<br><br>
+          div :not(p) { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt;P&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt;h3&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;section&gt; Section&lt;/section&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;P</p>
+            <h3>&nbsp;&nbsp;h3</h3>
+            <section>&nbsp;&nbsp;Section</section>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+    <section class="selector" id="negationSelector">
+      <h2>Negation Selector <br><br> :not(X)</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Selects elements that are NOT p elements<br><br>
+          div :not(p) { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV 1<br>&nbsp;&nbsp;
+          &lt;p&gt;P&lt;/p&gt;<br>&nbsp;&nbsp;
+          &lt;h3&gt;h3&lt;/h3&gt;<br>&nbsp;&nbsp;
+          &lt;section&gt; Section&lt;/section&gt;<br>
+          &lt;/div&gt;<br>&nbsp;&nbsp;
+        </section>
+        <section class="selectorDiv">
+          <div>DIV 1
+            <p>&nbsp;&nbsp;P</p>
+            <h3>&nbsp;&nbsp;h3</h3>
+            <section>&nbsp;&nbsp;Section</section>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+
+
+    <section class="selector" id="attributeSelector">
+      <h2>Attribute Selector <br><br> [attribute]</h2>
+      <section class="selectorExample">
+        <section class="selectorDiv">
+          Select all elements that have a specific attribute<br>
+          Specify the value of the attribute [attribute="value"]<br>
+          Value begins with characters [attribute^="val"]<br>
+          Value ends with characters [attribute$="ue"]<br><br>
+          Value conatins characters [attribute*="alu"]<br><br>
+          p[type] { <br>&nbsp;&nbsp;
+          color: red;<br>
+          }
+        </section>
+        <section class="selectorDiv">
+          &lt;div &gt; DIV&lt;/div&gt;<br>
+          &lt;p type="type X"&gt;P type X&lt;/p&gt;<br>
+          &lt;p type="type Y"&gt;P type X&lt;/p&gt;<br>
+          &lt;div type="type Z"&gt; DIV type Z&lt;/div&gt;<br>
+
+        </section>
+        <section class="selectorDiv">
+          <div>DIV</div>
+          <p type="type X">P type X</p>
+          <p type="type Y">P type Y</p>
+          <div type="type Z">DIV type Z</div>
+        </section>
+      </section>
+    </section>
+
+
+
+
+
+  </Main>
+
+  <footer>
+
+  </footer>
+
+</body>
+
+</html>
