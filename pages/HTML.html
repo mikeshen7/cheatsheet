@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/textPage.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h2><a href="../index.html">Home</a></h2>
+      <h2><a href="../pages/CSSSelector.html">CSS Selector</a></h2>
+      <h2><a href="../pages/CSSPosition.html">CSS Positioning</a></h2>
+      <h2><a href="../pages/forms.html">Forms</a></h2>
+      <h2><a href="../pages/HTML.html">HTML</a></h2>
+      <h2><a href="../pages/markdown.html">Markdown</a></h2>
+      <h2><a href="../pages/Terminal.html">Terminal</a></h2>
+      <h2><a href="../pages/demo.html">Demo</a></h2>
+    </nav>
+  </header>
+
+
+  <Main>
+    <h2 id="variables---4-ways-to-declare">Variables - 4 ways to declare</h2>
+    <ol>
+      <li>var x = 5; variable in the function scope. Old way. Use let instead.</li>
+      <li>let x = 5; variable in the block scope. Cannot re-declare</li>
+      <li>const x = 5; constant in the block scope. Cannot re-declare</li>
+      <li>None. Don&#39;t use.</li>
+    </ol>
+    <h3 id="variable-identifiers">Variable identifiers</h3>
+    <ul>
+      <li>Can contain letters, digits, unnderscores, dollar signs</li>
+      <li>Must begin with letter</li>
+      <li>Case sensitive</li>
+      <li>Can&#39;t use reserved words</li>
+    </ul>
+    <p>Special characters:</p>
+    <p>Dollar sign treated as a letter. By convention, used as alias to main function in JS library
+      Underscore treated as a letter. By convention, used as alias for private (hidden) variables
+      Equals sign</p>
+    <ul>
+      <li>One: assignment</li>
+      <li>Two: sort-of equals</li>
+      <li>Three: strictly equals</li>
+    </ul>
+    <h2 id="data-types">Data types</h2>
+    <ul>
+      <li>Boolean</li>
+      <li>Strings</li>
+      <li>Numbers / integers</li>
+      <li>Truthy / Falsey
+        -- 0 is the only falsey value. All other numbers are truthy.
+        -- empty string is the only falsey value. All other strings are truthy.</li>
+    </ul>
+    <h2 id="operators-lots-of-different-types">Operators: lots of different types</h2>
+    <ul>
+      <li>Arithmetic (+, -, *, **, /, %, ++, --)</li>
+      <li>Assignment (=, +=, -=, *=, /=, %=, **=)</li>
+      <li>Comparison (==, ===, !=, !==, &gt;, &lt;, &gt;=, &lt;=, ?) Use STRICT comparison</li>
+      <li>Logical (&amp;&amp;, ||, !)</li>
+      <li>Type (typeof, instanceof)</li>
+      <li>Bitwise operators (&amp;, |, ~, ^, &lt;&lt;, &gt;&gt;, &gt;&gt;&gt;)</li>
+    </ul>
+    <h2 id="functions-re-usable-block-of-code-that-can-be-invoked">Functions: re-usable block of code that can be
+      invoked</h2>
+    <p>Example:</p>
+    <pre><code class="language-javascript">function name(parameter1, parameter2, parameter3) {
+      // code to be executed
+    }
+    </code></pre>
+    <p>Functions can return a value.
+      Variables decleared inside functions are local variables - can only be accessed by the function.</p>
+    <h2 id="loops">Loops</h2>
+    <p>Use FOR loop when you know how many loops you want.
+      for ([initialExpression]; [conditionExpression]; [incrementExpression])
+      statement</p>
+    <p>Use WHILE if you don&#39;t know how many loops you want.
+      while (condition)
+      statement</p>
+    <p>do
+      statement
+      while (condition);</p>
+    <h2 id="syntax">Syntax</h2>
+    <p>add <code>&#39;use strict&#39;;</code> at the beginning
+      Use &#39; instead of &quot; for string
+      Use ; at end of statements
+      use camelCase
+      Ctrl +: comments out code
+      Add internal JS to end of html. Or add external JS reference at end.</p>
+    <p>Template literals: Use string output with variables inside. **MUST USE <code>, not &#39;** prompt(</code>My name
+      is ${variableName})
+      Compare to string interpolation:
+      prompt(&#39;My name is &#39; + varaibleName)</p>
+    <h2 id="objects">Objects</h2>
+    <p>const person = {
+      name: [&quot;Bob&quot;, &quot;Smith&quot;],
+      bio() {
+      console.log(<code>${this.name[0]} ${this.name[1]} is ${this.age} years old.</code>);
+      },
+      };</p>
+    <p>person.name would return [&quot;Bob&quot;, &quot;Smith&quot;]
+      person.bio() would call the bio function within person.</p>
+    <h3 id="object-within-object">Object within object</h3>
+    <p>const person = {
+      name: {
+      first: &quot;Bob&quot;,
+      last: &quot;Smith&quot;,
+      },
+      // …
+      };</p>
+    <p>person.name.first would return &quot;Bob&quot;</p>
+    <h3 id="functions-inside-of-objects">Functions inside of objects</h3>
+    <pre><code class="language-JS">const person = {
+      first: &quot;Bob&quot;,
+      last: &quot;Smith&quot;,
+      myFunction: function(){     // use keyword fuction() to indicate it&#39;s a function.
+          console.log(&#39;Hi&#39;);
+        },
+      }
+    </code></pre>
+    <p>To call:
+      person.myFunction(); // use parenthesis to call the function.</p>
+    <h3 id="bracket-notation">Bracket notation</h3>
+    <p>person[&quot;age&quot;]; is the same as person.age
+      Use this when accessing info via varaible (like function call)</p>
+    <h3 id="can-create-new-properties">Can create new properties</h3>
+    <p>person.eyes = &#39;hazel&#39;; // If eyes didn&#39;t exist before, you can create it just by referencing it.
+      person.[&quot;eyes&quot;] = &#39;hazel&#39;; // Alternate method with bracket notation</p>
+    <h3 id="can-use-variable-to-refer-to-itself-using-keyword-of-this">Can use variable to refer to itself using keyword
+      of: this</h3>
+    <p>In an object - refers to the object you are in</p>
+    <p>const person1 = {
+      name: &quot;Chris&quot;,
+      introduceSelf() {
+      console.log(<code>Hi! I&#39;m ${this.name}.</code>); // this.name = person1.name
+      },
+      };</p>
+    <h3 id="constructors-function-that-creates-new-objects">Constructors: function that creates new objects</h3>
+    <p>function Person(name) { // creates function called &quot;Salva&quot;
+      this.name = name; // Salva.name = Salva
+      this.introduceSelf = function () {
+      console.log(<code>Hi! I&#39;m ${this.name}.</code>); // Hi! I&#39;m ${Salva.name}. or Hi! I&#39;m Salva.
+      };
+      }</p>
+    <p>const salva = new Person(&quot;Salva&quot;); // calls function <code>Person</code> as a constructor using keyword
+      of new
+      salva.name; // uses Salva as variable. replaces <code>this</code> with <code>Salva</code> in the function
+      salva.introduceSelf(); // executes introducesSelf method on salva</p>
+    <h4 id="constructors-and-objects-differences">Constructors and Objects differences</h4>
+    <p>Objects created by constructors are tied to the original constructors. Can use prototypes.
+      Don&#39;t use constructors for creating methods inside objects. Use Prototype instead. Functions created by simple
+      objects take up more memory.</p>
+    <pre><code class="language-JS">Person.prototype.greeting = function (){
+      console.log(&#39;stuff&#39;);
+    } 
+    </code></pre>
+    <p>creates a method of greeting for all Person objects.</p>
+    <h2 id="apis">APIs</h2>
+    <p>APIs: software with protocols and procedures to send data back and forth between two separate computers (i.e.
+      server / client, webpage / server)
+      HTTP verbs: GET, POST, PUT/PATCH, DELETE</p>
+    <p>fetch() to request</p>
+
+
+  </Main>
+
+  <footer>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+main {
+  width:80%;
+  margin-right:4px;
+  margin-left:auto;
+}
+
+main h2 {
+  font-size: 3vw;
+  margin-bottom:10px;
+}
+
+h3 {
+  font-size: 2vw;
+  margin-bottom:10px;
+}
+
+.level1OL {
+  list-style-type:decimal;
+  list-style-position: inside;
+}
+
+.level2OL {
+  list-style-type:upper-alpha;
+  list-style-position: inside;
+  margin-left:20px;
+}
+
+li {
+  margin-bottom:5px;
+}
