@@ -1,0 +1,50 @@
+.custom-light-green-text {
+  color: #9EF01A;
+}
+
+.custom-dark-green-background {
+  background-color: #004B23;
+}
+
+.custom-main {
+  padding-top: 60px;
+  width: 80%;
+  margin: auto;
+
+}
+
+.custom-img {
+  width: 100px
+}
+
+.custom-group {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #9EF01A;
+  margin-bottom: 10px;
+}
+
+.custom-center-container {
+  display: flex;
+
+}
+
+.custom-center-inside {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+}
+
+.custom-footer-img {
+  margin: auto;
+  margin-top: 20px;
+}
+
+.custom-footer-text {
+  text-align: center;
+}
+
+.custom-footer {
+  margin-top: 20px
+}

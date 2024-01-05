@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/javascript.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h2><a href="../index.html">Home</a></h2>
+      <h2><a href="../pages/CSSSelector.html">CSS Selector</a></h2>
+      <h2><a href="../pages/CSSPosition.html">CSS Positioning</a></h2>
+      <h2><a href="../pages/forms.html">Forms</a></h2>
+      <h2><a href="../pages/HTML.html">HTML</a></h2>
+      <h2><a href="../pages/javascript.html">HTML</a></h2>
+      <h2><a href="../pages/markdown.html">Markdown</a></h2>
+      <h2><a href="../pages/Terminal.html">Terminal</a></h2>
+      <h2><a href="../pages/demo.html">Demo</a></h2>
+    </nav>
+  </header>
+
+
+  <Main>
+    <h2>Arrays</h2>
+    <ul>forEach
+      <li>array.forEach((element, index, array) => {function}</li>
+      <li>Performs function for each element</li>
+      <li>No return value</li>
+      <li>Cannot mutate original array - use another temp variable to store info</li>
+    </ul>
+    <ul>map
+      <li>array.map((element, index, array) => {function}</li>
+      <li>Performs function for each element, but returns NEW array with results</li>
+      <li>Cannot mutate original array - use another temp variable to store new array</li>
+    </ul>
+    <ul>filter
+      <li>array.filter((element, index, array) => {function} </li>
+      <li>Performs function for each element, but returns NEW array with original elements if callback function is true.
+      </li>
+      <li>Cannot mutate original array - use another temp variable to store new array</li>
+    </ul>
+    <ul>sort
+      <li>array.sort((a,b) => {function}</li>
+      <li>Performs comparison between a and b.</li>
+      <li>If return is < 0, sort a before b</li>
+      <li>If return is > 0, sort b before a</li>
+      <li>If return === 0, keep original order</li>
+      <li>No return value - mutates original array</li>
+    </ul>
+    <ul>reduce
+      <li>array.reduce((accumulator, elementValue, elementIndex, array) => {function}, initial value)</li>
+      <li>Use to add up all elements in array</li>
+      <li>Returns final accumulator value</li>
+    </ul>
+    <ul>split
+      <li>array.split(separator,limit)</li>
+      <li>Parses string into array using separator character</li>
+      <li>Original string is NOT modified</li>
+    </ul>
+    <ul>join
+      <li>Turns arrays into strings</li>
+      <li>arr.join(separator)</li>
+      <li>Original array is NOT modified</li>
+    </ul>
+    <ul>slice
+      <li>Find elements within an array and returns the string</li>
+      <li>array.slice(start,end)</li>
+      <li>Original array is NOT modified</li>
+    </ul>
+    <ul>splice
+      <li>delete ore replace parts of an array</li>
+      <li>array.splice(start, # of elements, replacement value)</li>
+      <li>Original array is IS modified</li>
+    </ul>
+    <h2>Objects
+      <ul>for-in
+        <li>for (let name in person) {} </li>
+      </ul>
+      <ul>Object.keys
+        <li>Takes an object and returns an array of properties</li>
+        <li>let properties = Object.keys(object) </li>
+        <li>Since it is an array, you can use typical array methods (like forEach).
+      </ul>
+      <ul>Object.values
+        <li>returns iterable array of just the values from an object </li>
+      </ul>
+      <ul>Object.entries
+        <li>returns array of each property/value pair as array </li>
+      </ul>
+      <h2>Classes</h2>
+      <ul>Basic syntax
+        <li>Similar to function, except with class wrapper</li>
+        <li>Need constructor inside to create object</li>
+        <li>Example: <br>
+          class ClassName {<br>
+          &nbsp;&nbsp;constructor(parameter1, parameter2){<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;this.parameter1 = parameter1;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;this.parameter2 = parameter2;<br>
+          &nbsp;&nbsp;} <br>
+          }
+        </li>
+      </ul>
+      <ul>Extend Class
+        <li>Need constructor to create object, just like before</li>
+        <li>super calls constructor from parent class to access parent properties</li>
+        <li>Example:<br>
+          class SubClass extends ClassName{<br>
+          &nbsp;&nbsp;constructor(parameter1, parameter2, parameter3){<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;super(parameter1, parameter2); <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;this.parameter3 = parameter3;<br>
+          &nbsp;&nbsp;} <br>
+          }
+        </li>
+
+
+
+
+      </ul>
+
+
+
+
+    </h2>
+
+  </Main>
+
+  <footer>
+  </footer>
+
+</body>
+
+</html>

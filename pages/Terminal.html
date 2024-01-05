@@ -27,34 +27,63 @@
 
   <Main>
     <h3>GitHub Branches</h2>
-    <ol class="level1OL">
-      <li>git checkout-b nameOfBranch</li>
-      <ol class="level2OL">
-        <li>Do this in terminal to create a new branch on your computer</li>
-        <li>checkout moves to branch</li>
-        <li>-b creates the branch</li>
-        <li>-d deletes a branch</li>
-      </ol>
-      <li>Make changes in nameOfBranch</li>
-      <li>ACP to sync, with one change</li>
-      <ol class="level2OL">
-        <li>git add filename</li>
-        <li>git commit -m "commit notes"</li>
-        <li>`git push origin nameOfBranch`</li>
-        <li>This creates a new branch in GitHub</li>
-      </ol>
-      <li>GitHub -> Open Pull Request -> merge it in</li>
-      <ol class="level2OL">
-        <li>This merges branch into main</li>
-      </ol>
-      <li>In terminal git checkout main - moves back to main branch</li>
-      <li>git pull origin main - pull info from main on GitHub onto local terminal</li>
-      <li>git checkout nameOfBranch</li>
-      <li>git merge main - syncs timeline of nameOfBranch to main</li>
+      <ol class="level1OL">
+        <li>git checkout-b nameOfBranch</li>
+        <ol class="level2OL">
+          <li>Do this in terminal to create a new branch on your computer</li>
+          <li>checkout moves to branch</li>
+          <li>-b creates the branch</li>
+          <li>-d deletes a branch</li>
+        </ol>
+        <li>Make changes in nameOfBranch</li>
+        <li>ACP to sync, with one change</li>
+        <ol class="level2OL">
+          <li>git add filename</li>
+          <li>git commit -m "commit notes"</li>
+          <li>`git push origin nameOfBranch`</li>
+          <li>This creates a new branch in GitHub</li>
+        </ol>
+        <li>GitHub -> Open Pull Request -> merge it in</li>
+        <ol class="level2OL">
+          <li>This merges branch into main</li>
+        </ol>
+        <li>In terminal git checkout main - moves back to main branch</li>
+        <li>git pull origin main - pull info from main on GitHub onto local terminal</li>
+        <li>git checkout nameOfBranch</li>
+        <li>git merge main - syncs timeline of nameOfBranch to main</li>
+        <li>git rebase main</li>
+        <ol>
+          <li>Working off another branch (i.e. dev)</li>
+          <li>rebase main will add any changes in main and include it into dev</li>
+        </ol>
+        <li>git branch -f main C0</li>
+        <ol>
+          <li>moves (by force) main branch to C0 commit</li>
+        </ol>
+        <li>git branch -f main HEAD~3</li>
+        <ol>
+          <li>moves (by force) main branch to 3 parents behind HEAD</li>
+        </ol>
+        <li>git reset</li>
+        <ol>
+          <li>moves a branch to an older commit as if the commit never happened</li>
+        </ol>
+        <li>git revert</li>
+        <ol>
+          <li>Creates a new commit that undoes the changes. Use this if the branch has other branches off of it so you
+            can share those changes</li>
+        </ol>
+        <li>git cherry-pick commit1 commit2</li>
+        <ol>
+          <li>addes changes in commit1 and commit2 to current branch</li>
+        </ol>
+        <li>git rebase -i </li>
+        <ol>
+          <li>-i interactive</li>
+        </ol>
 
 
-
-    </ol>
+      </ol>
 
 
   </Main>

@@ -1,0 +1,43 @@
+.carousel {
+  align-content: center;
+  background-color: gray;
+
+}
+
+.carousel-caption h3,p {
+  color: black;
+  -webkit-text-stroke: 1px yellow;
+}
+
+.carousel-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item img {
+  height: 300px;
+}
+
+.nav-item {
+  color:white;
+  margin-right: 30px;
+}
+
+.about-text {
+  color:black;
+}
+
+.carousel-item {
+  height: 500px;
+}
+
+#root {
+  display: flex;
+  flex-direction:column;
+}
+
+.addButton {
+  width:max-content;
+  align-self: center;
+}

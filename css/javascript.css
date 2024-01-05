@@ -1,0 +1,42 @@
+main {
+  border: 1px solid red;
+  padding: 5px;
+  width:84%;
+  margin-right:4px;
+  margin-left:auto;
+}
+
+nav {
+  border: 1px solid black;
+  position: absolute;
+  height: 100%;
+  width: 15%;
+}
+
+nav h2 {
+  font-size: 1vw;
+  margin: 0px;
+}
+
+h2 {
+  font-size: 3vw;
+}
+
+h3 {
+  font-size: 2vw;
+  margin-bottom:10px;
+}
+
+ul {
+  font-size: 1.2vw;
+  margin-top: 10px;
+  
+}
+
+li {
+  font-size: 1 vw;
+  list-style:circle;
+  list-style-position: inside;
+  margin-bottom:5px;
+
+}
