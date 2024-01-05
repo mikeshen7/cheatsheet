@@ -4,7 +4,12 @@
 
 1. Create repo and clone
 2. Create virtual environment
+python -m venv .venv
+
 3. Start virtual environment
+Linux: source .venv/bin/activate
+Windows: .venv/Scripts/activate
+
 4. Add gitignore, README.md
 5. Install dependencies:
 pip install django
