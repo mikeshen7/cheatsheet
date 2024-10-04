@@ -151,5 +151,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Virtual environments
+.venv
+
+
 
 # End of https://www.gitignore.io/api/node,linux,macos,windows,visualstudiocode
