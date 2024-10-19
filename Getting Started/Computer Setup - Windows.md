@@ -23,7 +23,6 @@
 9. Install Docker
 10. Install Rainbow Brackets
 
-
 ## Configure Git
 1. git config --global user.name "mike"
 2. git config --global user.email "michael.m.shen@gmail.com"
